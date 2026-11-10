@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaX Webworks — Build What’s Next</title>
+<meta name="description" content="NovaX Webworks builds modern websites, Android apps, and digital experiences.">
+<meta name="theme-color" content="#080d1b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080d1b;--bg2:#0d1428;--card:rgba(255,255,255,.04);--line:rgba(255,255,255,.1);--tx:#f4f6fb;--mut:#9aa6c0;--a:#6d7cff;--b:#22d3ee;--c:#c084fc}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--b);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.grad{background:linear-gradient(90deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:flow 6s linear infinite}
+@keyframes flow{to{background-position:200% center}}
+/* progress + nav */
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--a),var(--b));z-index:100}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s;padding:16px 0}
+nav.s{background:rgba(8,13,27,.75);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:10px 0}
+.nv{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
+.logo i{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;font-style:normal;font-weight:800}
+.links{display:flex;gap:28px;font-size:14px;color:var(--mut)}
+.links a:hover{color:var(--tx)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-weight:600;font-size:14px;border:1px solid var(--line);transition:.25s;cursor:pointer;font-family:inherit;color:var(--tx);background:transparent}
+.btn.p{background:linear-gradient(135deg,var(--a),#8b5cf6);border-color:transparent;box-shadow:0 8px 30px -8px var(--a)}
+.btn:hover{transform:translateY(-2px);border-color:var(--a)}
+.btn.p:hover{box-shadow:0 12px 40px -6px var(--a)}
+#mb{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:8px 12px;font-size:16px;cursor:pointer}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden;text-align:center}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:float 14s ease-in-out infinite}
+.o1{width:480px;height:480px;background:var(--a);top:-120px;left:-100px}
+.o2{width:420px;height:420px;background:var(--b);bottom:-120px;right:-80px;animation-delay:-5s;opacity:.35}
+.o3{width:300px;height:300px;background:var(--c);top:40%;left:55%;animation-delay:-9s;opacity:.3}
+@keyframes float{50%{transform:translate(50px,-40px) scale(1.1)}}
+.grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at center,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,#000 20%,transparent 70%);opacity:.35}
+.hero .wrap{position:relative;z-index:2}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:13px;color:var(--mut);margin-bottom:28px}
+.dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 #34d399;animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px transparent}}
+h1{font-size:clamp(42px,8vw,88px);line-height:1.04;letter-spacing:-.035em;font-weight:800}
+.hero p.lead{max-width:620px;margin:26px auto 36px;color:var(--mut);font-size:clamp(16px,2vw,19px)}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.type{display:inline-block;border-right:3px solid var(--b);padding-right:4px;animation:blink .8s step-end infinite}
+@keyframes blink{50%{border-color:transparent}}
+.hero .in{opacity:0;transform:translateY(24px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .in:nth-child(2){animation-delay:.15s}.hero .in:nth-child(3){animation-delay:.3s}.hero .in:nth-child(4){animation-delay:.45s}
+@keyframes up{to{opacity:1;transform:none}}
+/* marquee */
+.mq{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:18px 0}
+.mt{display:flex;gap:56px;width:max-content;animation:mq 30s linear infinite;color:var(--mut);font-weight:600;font-size:15px}
+.mt span::before{content:"✦";color:var(--a);margin-right:56px}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* sections */
+section{padding:110px 0}
+.hd{max-width:640px;margin-bottom:56px}
+.hd h2{font-size:clamp(30px,5vw,52px);line-height:1.1;letter-spacing:-.03em;font-weight:800;margin-bottom:16px}
+.hd p{color:var(--mut);font-size:18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{position:relative;padding:32px;border:1px solid var(--line);border-radius:22px;background:var(--card);overflow:hidden;transition:.35s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--x,50%) var(--y,0%),rgba(109,124,255,.18),transparent 45%);opacity:0;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(109,124,255,.5)}
+.card:hover::before{opacity:1}
+.ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:22px;background:linear-gradient(135deg,rgba(109,124,255,.25),rgba(34,211,238,.15));border:1px solid var(--line);margin-bottom:20px;position:relative}
+.card h3{font-size:20px;margin-bottom:8px;position:relative}
+.card p{color:var(--mut);font-size:15px;position:relative}
+.card ul{margin-top:16px;list-style:none;font-size:14px;color:var(--mut);position:relative}
+.card li{padding:4px 0}.card li::before{content:"✓";color:var(--b);margin-right:10px}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;counter-reset:s}
+.step{padding:28px;border-left:2px solid var(--line);position:relative;counter-increment:s}
+.step::before{content:counter(s);position:absolute;left:-15px;top:0;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;font-size:13px;font-weight:700}
+.step h3{margin-bottom:6px}.step p{color:var(--mut);font-size:15px}
+/* project */
+.proj{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:48px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(109,124,255,.12),rgba(34,211,238,.05));overflow:hidden}
+.tag{display:inline-block;padding:4px 12px;border-radius:999px;background:rgba(109,124,255,.18);color:#b8c0ff;font-size:13px;margin:0 6px 6px 0}
+.proj h3{font-size:38px;letter-spacing:-.02em;margin:14px 0}
+.proj p{color:var(--mut);margin-bottom:20px}
+.phone{width:260px;margin:0 auto;border:8px solid #1b2440;border-radius:36px;background:#0b1122;padding:14px;box-shadow:0 30px 80px -20px rgba(109,124,255,.5);animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px) rotate(1deg)}}
+.scr{background:#141c36;border-radius:12px;padding:12px;font-size:13px;min-height:54px;margin-bottom:10px;color:#dfe5ff}
+.sug{display:flex;gap:6px;margin-bottom:10px}.sug span{flex:1;text-align:center;background:#1b2648;border-radius:8px;padding:5px 0;font-size:12px;color:#aab6e8}
+.keys{display:grid;grid-template-columns:repeat(10,1fr);gap:4px}
+.keys b{aspect-ratio:1/1.25;border-radius:5px;background:#1f2a4d;animation:key 3s infinite}
+.keys b:nth-child(3n){animation-delay:.4s}.keys b:nth-child(4n){animation-delay:1.1s}.keys b:nth-child(5n){animation-delay:1.8s}
+@keyframes key{0%,90%,100%{background:#1f2a4d}95%{background:var(--a)}}
+/* about */
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.vals{display:grid;gap:16px}
+.val{padding:20px 24px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.val h3{font-size:17px;margin-bottom:4px}.val p{color:var(--mut);font-size:14px}
+/* faq */
+details{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:20px 24px;margin-bottom:12px;transition:.25s}
+details[open]{border-color:rgba(109,124,255,.5)}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";font-size:22px;color:var(--b);transition:.3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mut);margin-top:12px;font-size:15px}
+/* contact */
+.ct{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;padding:48px;border:1px solid var(--line);border-radius:28px;background:var(--bg2);position:relative;overflow:hidden}
+.ct h2{font-size:clamp(30px,4.5vw,46px);line-height:1.1;letter-spacing:-.03em;margin-bottom:16px}
+.ct p{color:var(--mut)}
+.mail{display:inline-block;margin-top:22px;font-weight:600;color:var(--b);border-bottom:1px solid var(--b)}
+form{display:grid;gap:14px}
+label{font-size:13px;color:var(--mut);display:grid;gap:6px}
+input,select,textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:13px 14px;color:var(--tx);font:inherit;font-size:15px;transition:.2s}
+select option{background:#0d1428}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--a);box-shadow:0 0 0 3px rgba(109,124,255,.25)}
+textarea{min-height:120px;resize:vertical}
+.ok{display:none;color:#34d399;font-size:14px}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mut);font-size:14px}
+.ft{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+/* reveal */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.v{opacity:1;transform:none}
+@media(max-width:860px){
+.links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(8,13,27,.97);padding:20px 24px;gap:16px;border-bottom:1px solid var(--line)}
+.links.open{display:flex}#mb{display:block}nav .btn.p{display:none}
+.proj,.ab,.ct{grid-template-columns:1fr;padding:28px;gap:32px}section{padding:80px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.hero .in{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav"><div class="wrap nv">
+<a href="#home" class="logo"><i>N</i>NovaX Webworks</a>
+<div class="links" id="links"><a href="#services">Services</a><a href="#process">Process</a><a href="#projects">Apps</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+<a href="#contact" class="btn p">Start a project</a>
+<button id="mb" aria-label="Menu">☰</button>
+</div></nav>
+
+<header class="hero" id="home">
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div>
+<div class="wrap">
+<div class="pill in"><span class="dot"></span>Independent digital studio · Open for projects</div>
+<h1 class="in">Build what’s next.<br><span class="grad">We make <span class="type" id="tw"></span></span></h1>
+<p class="lead in">NovaX Webworks creates modern websites, useful Android apps, and digital experiences with clean design, thoughtful details, and smooth performance.</p>
+<div class="cta in"><a class="btn p" href="#projects">Download our apps</a><a class="btn" href="#services">What we do ↓</a></div>
+</div>
+</header>
+
+<div class="mq"><div class="mt" id="mt"></div></div>
+
+<section id="services"><div class="wrap">
+<div class="hd rv"><h2>Ideas into digital experiences.</h2><p>From the first concept to the final detail, we make technology feel simple, useful, and enjoyable.</p></div>
+<div class="cards">
+<div class="card rv"><div class="ic">⌘</div><h3>Web Development</h3><p>Fast, responsive websites that look great on phones, tablets, and desktops.</p><ul><li>Business &amp; portfolio sites</li><li>Landing pages</li><li>Animations &amp; interactions</li></ul></div>
+<div class="card rv"><div class="ic">▣</div><h3>Android Apps</h3><p>Mobile apps with intuitive interfaces and features that fit everyday life.</p><ul><li>Custom app concepts</li><li>Keyboards &amp; utilities</li><li>Multi-language support</li></ul></div>
+<div class="card rv"><div class="ic">✧</div><h3>UI &amp; UX Design</h3><p>Visual systems and layouts that help products feel clear and easy to use.</p><ul><li>Layouts &amp; wireframes</li><li>Colour &amp; type systems</li><li>Interactive prototypes</li></ul></div>
+</div></div></section>
+
+<section id="process" style="background:var(--bg2)"><div class="wrap">
+<div class="hd rv"><h2>How we work.</h2><p>A simple process, so you always know what happens next.</p></div>
+<div class="steps rv">
+<div class="step"><h3>Discuss</h3><p>You share your idea, goals, and audience.</p></div>
+<div class="step"><h3>Design</h3><p>We sketch the layout and look before building.</p></div>
+<div class="step"><h3>Build</h3><p>We code it clean, fast, and mobile-first.</p></div>
+<div class="step"><h3>Launch</h3><p>We test, publish, and fix what you find.</p></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap">
+<div class="hd rv"><h2>Our apps.</h2><p>Free Android apps you can download and install right now.</p></div>
+<div class="proj rv" style="margin-bottom:24px">
+<div>
+<span class="tag">Android</span><span class="tag">Keyboard</span>
+<h3>NextKey</h3>
+<p>A customisable Android keyboard focused on personalisation, smarter typing tools, and a more expressive typing experience.</p>
+<ul style="list-style:none;color:var(--mut);margin-bottom:24px"><li>✓ &nbsp;Voice input</li><li>✓ &nbsp;Better word prediction</li><li>✓ &nbsp;English → Hindi / Marathi translator</li><li>✓ &nbsp;Emoji styles</li></ul>
+<a class="btn p" href="downloads/NextKey.apk" download>⬇ Download NextKey (APK)</a>
+</div>
+<div class="phone"><div class="scr" id="ph"></div><div class="sug"><span>hello</span><span>help</span><span>hey</span></div>
+<div class="keys" id="ks"></div></div>
+</div>
+<div class="cards">
+<div class="card rv"><div class="ic">💬</div><h3>LumaChat</h3><p>A chat app for Android.</p><p style="margin:14px 0 20px"><span class="tag">Android</span><span class="tag">Chat</span></p><a class="btn p" href="downloads/LumaChat.apk" download>⬇ Download LumaChat (APK)</a></div>
+<div class="card rv"><div class="ic">📚</div><h3>StudyMate</h3><p>An offline student planner with streaks, focus timer, exam countdown and home-screen widgets.</p><p style="margin:14px 0 20px"><span class="tag">Android</span><span class="tag">Coming soon</span></p><a class="btn" href="downloads/StudyMate.apk" download>⬇ Download StudyMate (APK)</a></div>
+</div>
+<div class="rv" style="margin-top:32px;padding:20px 24px;border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--mut);font-size:14px"><b style="color:var(--tx)">How to install:</b> tap Download, open the file, and allow “Install unknown apps” for your browser if Android asks. These apps are not on the Play Store.</div>
+</div></section>
+
+<section id="about" style="background:var(--bg2)"><div class="wrap ab">
+<div class="rv"><div class="hd" style="margin:0"><h2>Small studio. <span class="grad">Big ideas.</span></h2><p>NovaX Webworks is an independent digital brand exploring web and mobile technology. We build products that are practical, polished, and accessible to everyone.</p></div></div>
+<div class="vals rv">
+<div class="val"><h3>Clean design</h3><p>Simple, modern layouts without clutter.</p></div>
+<div class="val"><h3>Smooth performance</h3><p>Lightweight pages that load quickly on any device.</p></div>
+<div class="val"><h3>Thoughtful details</h3><p>Small touches that make a product feel finished.</p></div>
+</div></div></section>
+
+<section id="faq"><div class="wrap" style="max-width:780px">
+<div class="hd rv"><h2>Questions.</h2></div>
+<div class="rv">
+<details><summary>What can you build?</summary><p>Websites, Android apps, and UI/UX designs, from simple landing pages to full projects.</p></details>
+<details><summary>Will my website work on mobile?</summary><p>Yes. Every site is built mobile-first and tested on phones, tablets, and desktops.</p></details>
+<details><summary>How do I start?</summary><p>Send a short message using the form below or email us directly. Tell us your idea and we’ll reply.</p></details>
+</div></div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap">
+<div class="ct rv">
+<div><h2>Have an idea? <span class="grad">Let’s talk.</span></h2><p>Tell us what you’re imagining. We’ll get back to you by email.</p>
+<a class="mail" href="mailto:rajmishra347585@gmail.com">rajmishra347585@gmail.com</a></div>
+<form id="f">
+<label>Your name<input id="n" required autocomplete="name"></label>
+<label>Your email<input id="e" type="email" required autocomplete="email"></label>
+<label>Project type<select id="t"><option>Website</option><option>Android app</option><option>UI / UX design</option><option>Something else</option></select></label>
+<label>Message<textarea id="m" required></textarea></label>
+<button class="btn p" type="submit" style="justify-content:center">Send message</button>
+<span class="ok" id="ok">Opening your email app…</span>
+</form></div></div></section>
+
+<footer><div class="wrap ft"><span>© <span id="y"></span> NovaX Webworks. All rights reserved.</span><span>Crafting the future of the web.</span></div></footer>
+
+<script>
+const $=s=>document.querySelector(s);
+$('#y').textContent=new Date().getFullYear();
+// nav + progress
+const nav=$('#nav'),bar=$('#bar');
+addEventListener('scroll',()=>{nav.classList.toggle('s',scrollY>20);bar.style.width=scrollY/(document.body.scrollHeight-innerHeight)*100+'%'},{passive:true});
+$('#mb').onclick=()=>$('#links').classList.toggle('open');
+document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>$('#links').classList.remove('open'));
+// typewriter
+const words=['websites.','Android apps.','digital experiences.','clean interfaces.'];let wi=0,ci=0,del=false;
+(function tick(){const w=words[wi];$('#tw').textContent=w.slice(0,ci);
+if(!del&&ci<w.length)ci++;else if(!del){del=true;return setTimeout(tick,1400)}
+else if(del&&ci>0)ci--;else{del=false;wi=(wi+1)%words.length}
+setTimeout(tick,del?40:90)})();
+// marquee
+const items=['Web Development','Android Apps','UI & UX Design','Responsive Layouts','Animations','Keyboards','Free Android Apps','Performance'];
+$('#mt').innerHTML=[...items,...items].map(t=>`<span>${t}</span>`).join('');
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.08+'s';io.observe(el)});
+// card spotlight
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--x',e.clientX-r.left+'px');c.style.setProperty('--y',e.clientY-r.top+'px')}));
+// phone
+$('#ks').innerHTML='<b></b>'.repeat(30);
+const msg='Typing made personal ✨';let pi=0;
+(function ty(){$('#ph').textContent=msg.slice(0,pi)+'|';pi=pi>msg.length+12?0:pi+1;setTimeout(ty,pi>msg.length?120:130)})();
+// contact -> email
+$('#f').onsubmit=e=>{e.preventDefault();
+const body=`Name: ${$('#n').value}\nEmail: ${$('#e').value}\nProject: ${$('#t').value}\n\n${$('#m').value}`;
+$('#ok').style.display='block';
+location.href='mailto:rajmishra347585@gmail.com?subject='+encodeURIComponent('Project enquiry — '+$('#t').value)+'&body='+encodeURIComponent(body)};
+</script>
+</body>
+</html>
