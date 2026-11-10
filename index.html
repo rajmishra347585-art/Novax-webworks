@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1b">
+  <meta name="description" content="NovaX Webworks builds thoughtful websites, Android apps, and digital experiences.">
+  <title>NovaX Webworks — Build What's Next</title>
+  <style>
+    :root{--bg:#080d1b;--panel:#111a2d;--text:#f4f7ff;--muted:#a8b4ca;--blue:#68a7ff;--cyan:#63e5e0;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 80% 0%,#172d50 0,transparent 38%),radial-gradient(ellipse at 0% 35%,#102b3d 0,transparent 32%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1100px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(8,13,27,.76);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.2px}.mark{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#071222;font-weight:950;font-size:20px;box-shadow:0 8px 28px #63cfff44}
+    .navlinks{display:flex;gap:26px;color:var(--muted);font-size:14px}.navlinks a:hover{color:white}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:13px;background:linear-gradient(110deg,var(--blue),var(--cyan));color:#071222;font-weight:800;border:0;box-shadow:0 10px 30px #54c9db30}
+    .hero{padding:104px 0 88px;display:grid;grid-template-columns:1.2fr .8fr;gap:55px;align-items:center}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;padding:7px 12px;border:1px solid var(--line);border-radius:30px;color:#b8e7f5;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;background:#ffffff08}
+    h1{font-size:clamp(44px,7vw,76px);line-height:1.04;letter-spacing:-3px;margin:22px 0}
+    .gradient{background:linear-gradient(100deg,#83b9ff,#73eee0);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:18px;color:var(--muted);max-width:610px}.actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:30px}.ghost{padding:11px 18px;border:1px solid var(--line);border-radius:13px;color:#dce8fa}
+    .visual{min-height:330px;border:1px solid #ffffff20;border-radius:30px;background:linear-gradient(145deg,#ffffff14,#ffffff04);box-shadow:0 30px 90px #0008,inset 0 1px #ffffff22;padding:25px;position:relative;overflow:hidden}
+    .orb{position:absolute;width:230px;height:230px;border-radius:50%;background:linear-gradient(135deg,#5d9cffaa,#58e5d6aa);filter:blur(1px);right:-35px;top:10px;box-shadow:0 0 90px #58cfff55}
+    .codecard{position:relative;margin-top:60px;padding:20px;border:1px solid #ffffff25;border-radius:18px;background:#081020d9;backdrop-filter:blur(15px);transform:rotate(-5deg);box-shadow:0 20px 40px #0008}
+    .dots{display:flex;gap:6px;margin-bottom:18px}.dots i{width:8px;height:8px;border-radius:50%;background:#7d91ad}.code-line{height:8px;border-radius:8px;margin:12px 0;background:linear-gradient(90deg,#6ba9ff 0 35%,#263b5d 35% 72%,transparent 72%)}.code-line:nth-child(3){width:80%}.code-line:nth-child(4){width:62%}
+    section{padding:72px 0}.section-head{max-width:650px;margin-bottom:30px}h2{font-size:clamp(30px,4vw,43px);letter-spacing:-1.3px;line-height:1.15;margin:0 0 12px}.sub{color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:21px;padding:24px;background:linear-gradient(145deg,#ffffff0d,#ffffff04);box-shadow:inset 0 1px #ffffff0a}.icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#6aaeff20;color:#8dc3ff;font-size:21px;margin-bottom:18px}.card h3{margin:0 0 8px;font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}
+    .project{display:flex;align-items:center;gap:22px}.project-logo{width:76px;height:76px;flex:0 0 76px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(135deg,#6ba9ff,#64e5d9);color:#081323;font-size:28px;font-weight:900}
+    .project .tag{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:#8fe4df}.project h3{font-size:24px;margin:4px 0}.project p{color:var(--muted);margin:0}
+    .cta{border:1px solid #ffffff20;border-radius:26px;padding:36px;background:linear-gradient(120deg,#172e4b,#102b37);display:flex;align-items:center;justify-content:space-between;gap:24px}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:760px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding:70px 0 55px;gap:28px}.visual{min-height:260px}.grid{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}h1{letter-spacing:-2px}.project{align-items:flex-start}}
+  </style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="brand" href="#home"><span class="mark">N</span><span>NovaX <span style="color:#8bdedc">Webworks</span></span></a>
+  <div class="navlinks"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+  <a class="btn" href="#contact">Let's connect</a>
+</nav></div></header>
+<main id="home">
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow">✦ Independent digital studio</span>
+      <h1>Build what's <span class="gradient">next.</span></h1>
+      <p class="lead">We create modern websites, useful Android apps, and digital experiences with a focus on clean design, thoughtful details, and smooth performance.</p>
+      <div class="actions"><a class="btn" href="#projects">Explore our work</a><a class="ghost" href="#services">What we do&nbsp; ↘</a></div>
+    </div>
+    <div class="visual" aria-label="Abstract digital design illustration"><div class="orb"></div><div class="codecard"><div class="dots"><i></i><i></i><i></i></div><div class="code-line"></div><div class="code-line"></div><div class="code-line"></div><div class="code-line" style="width:45%"></div></div></div>
+  </div>
+  <section id="services"><div class="wrap">
+    <div class="section-head"><h2>Ideas into digital experiences.</h2><p class="sub">From the first concept to the final details, we aim to make technology feel simple, useful, and enjoyable.</p></div>
+    <div class="grid">
+      <article class="card"><div class="icon">⌘</div><h3>Web Development</h3><p>Responsive websites and web experiences designed to look great across phones, tablets, and desktops.</p></article>
+      <article class="card"><div class="icon">▣</div><h3>Android Apps</h3><p>Mobile app concepts focused on intuitive interfaces, useful features, and a smooth everyday experience.</p></article>
+      <article class="card"><div class="icon">✧</div><h3>UI &amp; UX Design</h3><p>Modern layouts, visual systems, and interactions that help products feel clear and easy to use.</p></article>
+    </div>
+  </div></section>
+  <section id="projects"><div class="wrap">
+    <div class="section-head"><h2>Featured project</h2><p class="sub">A look at what we're working on.</p></div>
+    <article class="card project"><div class="project-logo">N</div><div><span class="tag">Keyboard · Android concept</span><h3>NextKey</h3><p>A customizable keyboard concept focused on personalization, typing tools, and a more expressive typing experience.</p></div></article>
+    <p class="sub" style="font-size:13px;margin-top:15px">More projects will be added here as they are ready to share.</p>
+  </div></section>
+  <section id="about"><div class="wrap">
+    <div class="section-head"><h2>Small studio. Big ideas.</h2><p class="sub">NovaX Webworks is an independent digital development brand exploring the possibilities of web and mobile technology. Our goal is to build products that are practical, polished, and accessible.</p></div>
+  </div></section>
+  <section id="contact"><div class="wrap"><div class="cta"><div><h2>Have an idea?</h2><p class="sub">We'd love to hear what you're imagining. Add your preferred contact details here before publishing.</p></div><a class="btn" href="mailto:YOUR_EMAIL@example.com?subject=Project%20enquiry">Contact the studio ↗</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> NovaX Webworks. All rights reserved.</span><span>Crafting the future of the web.</span></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
